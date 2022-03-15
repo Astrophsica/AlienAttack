@@ -10,6 +10,7 @@ public class ShowcaseBranches : MonoBehaviour
         //My fancy code
         // Extra fancy code that goes above the other fancy code in fancy branch
         // Fancy code here
+        // Ash makes his entrance
     }
 
     // Update is called once per frame
