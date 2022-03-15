@@ -23,7 +23,21 @@ public class EnemyPathing : MonoBehaviour
         _seeker = GetComponent<Seeker>();
 
         //Generate path
-        _seeker.StartPath(_transform.position, _target.position, OnPathComplete);
+        GenerateNewPath(_target);
+    }
+
+    void GenerateNewPath(Transform pTarget)
+    {
+        _seeker.StartPath(_transform.position, pTarget.position, OnPathComplete);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            var stronghold_transform = collision.GetComponent<Transform>();
+            stronghold_transform.position = new Vector2(-8.5f, 3.5f);
+        }
     }
 
     void FixedUpdate()
@@ -32,6 +46,13 @@ public class EnemyPathing : MonoBehaviour
         _reachedEndOfPath = _pathIndex >= _path.vectorPath.Count;
         if (!_reachedEndOfPath){
             FollowPath();
+        }
+        else
+        {
+            if (Vector2.Distance(_target.position, _transform.position) > 0.2f)
+            {
+                GenerateNewPath(_target);
+            }
         }
     }
 
