@@ -8,6 +8,8 @@ public class ShowcaseBranches : MonoBehaviour
     void Start()
     {
         //My fancy code
+        // Extra fancy code that goes above the other fancy code in fancy branch
+        // Fancy code here
     }
 
     // Update is called once per frame
