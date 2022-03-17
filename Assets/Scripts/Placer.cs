@@ -23,7 +23,7 @@ public class Placer : MonoBehaviour
         if (Input.GetMouseButtonDown(0)){
             Vector2 spawnPoint = GetClosestCentrePointToHit(hit.point);
 
-            if (!WallExistsAtPoint(spawnPoint)) //Check if wall already at point
+            if (WallExistsAtPoint(spawnPoint)) //Check if wall already at point
             {
                 return; 
             }
