@@ -11,22 +11,20 @@ public class Placer : MonoBehaviour
 
     void Start()
     {
-        _backgroundLayer = ~LayerMask.NameToLayer("Background");
         _wallLayer = LayerMask.GetMask("Walls");
+        _backgroundLayer = ~LayerMask.NameToLayer("Background");
     }
 
     void Update()
     {
-        //raycast mouse position to get world coordinates
+        //raycast mouse position to get game coordinates
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 5.0f, _backgroundLayer);
         //if left clicked, place wall at center of grid box closest to mouse position
         if (Input.GetMouseButtonDown(0)){
             Vector2 spawnPoint = GetClosestCentrePointToHit(hit.point);
 
             if (WallExistsAtPoint(spawnPoint)) //Check if wall already at point
-            {
-                return; 
-            }
+                return;
             Instantiate(ObjectToPlace, spawnPoint, Quaternion.identity);
             AstarPath.active.Scan(); //Rescans the grid to adjust for new block
             //This isn't needed when there is a "Build" and "Action" phase to the game, but for now.
