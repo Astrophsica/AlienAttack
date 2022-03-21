@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Placer : MonoBehaviour
 {
-    public GameObject ObjectToPlace;
+    public GameObject WallPrefab;
+    public GameObject TurretPrefab;
     LayerMask _backgroundLayer;
-    LayerMask _wallLayer;
+    LayerMask _structureLayer;
 
     void Start()
     {
-        _wallLayer = LayerMask.GetMask("Walls");
+        _structureLayer = LayerMask.GetMask("Wall", "Turret");
         _backgroundLayer = ~LayerMask.NameToLayer("Background");
     }
 
@@ -23,19 +24,28 @@ public class Placer : MonoBehaviour
         if (Input.GetMouseButtonDown(0)){
             Vector2 spawnPoint = GetClosestCentrePointToHit(hit.point);
 
-            if (WallExistsAtPoint(spawnPoint)) //Check if wall already at point
+            if (ObjectAtPoint(spawnPoint)) //Check if wall already at point
                 return;
-            Instantiate(ObjectToPlace, spawnPoint, Quaternion.identity);
+            Instantiate(WallPrefab, spawnPoint, Quaternion.identity);
             AstarPath.active.Scan(); //Rescans the grid to adjust for new block
             //This isn't needed when there is a "Build" and "Action" phase to the game, but for now.
         }
+        //right click will spawn a turret
+        else if (Input.GetMouseButtonDown(1))
+        {
+            Vector2 spawnPoint = GetClosestCentrePointToHit(hit.point);
+            if (ObjectAtPoint(spawnPoint)) //Check if wall already at point
+                return;
+            Instantiate(TurretPrefab, spawnPoint, Quaternion.identity);
+            AstarPath.active.Scan(); //Rescans the grid to adjust for new block
+        }
     }
 
-    private bool WallExistsAtPoint(Vector2 point)
+    private bool ObjectAtPoint(Vector2 point)
     {
-        if (Physics2D.Raycast(point, Vector2.zero, 5.0f, _wallLayer).collider != null)
+        if (Physics2D.Raycast(point, Vector2.zero, 5.0f, _structureLayer).collider != null)
         {
-            Debug.LogWarning("Wall already at position: " + point);
+            Debug.LogWarning("Structure already at position: " + point);
             return true;
         }
         return false;
