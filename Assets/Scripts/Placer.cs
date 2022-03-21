@@ -7,23 +7,40 @@ public class Placer : MonoBehaviour
 {
     public GameObject ObjectToPlace;
     LayerMask _backgroundLayer;
+    LayerMask _wallLayer;
 
     void Start()
     {
         _backgroundLayer = ~LayerMask.NameToLayer("Background");
+        _wallLayer = LayerMask.GetMask("Walls");
     }
 
     void Update()
     {
-        //raycast to get mouse position in world coordinates
+        //raycast mouse position to get world coordinates
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 5.0f, _backgroundLayer);
-        //if left button pressed, place wall at center of grid box
+        //if left clicked, place wall at center of grid box closest to mouse position
         if (Input.GetMouseButtonDown(0)){
             Vector2 spawnPoint = GetClosestCentrePointToHit(hit.point);
-            Debug.Log(spawnPoint);
+
+            if (WallExistsAtPoint(spawnPoint)) //Check if wall already at point
+            {
+                return; 
+            }
             Instantiate(ObjectToPlace, spawnPoint, Quaternion.identity);
-            AstarPath.active.Scan();
+            AstarPath.active.Scan(); //Rescans the grid to adjust for new block
+            //This isn't needed when there is a "Build" and "Action" phase to the game, but for now.
         }
+    }
+
+    private bool WallExistsAtPoint(Vector2 point)
+    {
+        if (Physics2D.Raycast(point, Vector2.zero, 5.0f, _wallLayer).collider != null)
+        {
+            Debug.LogWarning("Wall already at position: " + point);
+            return true;
+        }
+        return false;
     }
 
     private Vector2 GetClosestCentrePointToHit(Vector2 point)
