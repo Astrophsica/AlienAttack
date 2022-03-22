@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Placer : MonoBehaviour
 {
-    public GameObject WallPrefab;
-    public GameObject TurretPrefab;
+    //This static variable is changed by the UI scripts
+    public static GameObject ObjectToPlace = null;
     LayerMask _backgroundLayer;
     LayerMask _structureLayer;
 
@@ -18,26 +18,27 @@ public class Placer : MonoBehaviour
 
     void Update()
     {
-        //raycast mouse position to get game coordinates
+        if (ObjectToPlace == null) { return; }
+
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 5.0f, _backgroundLayer);
-        //if left clicked, place wall at center of grid box closest to mouse position
+        if (hit.collider == null) 
+        {
+            //Need to make sure mouse is over the game, not the UI
+            return; 
+        }
+
         if (Input.GetMouseButtonDown(0)){
             Vector2 spawnPoint = GetClosestCentrePointToHit(hit.point);
 
             if (ObjectAtPoint(spawnPoint)) //Check if wall already at point
                 return;
-            Instantiate(WallPrefab, spawnPoint, Quaternion.identity);
+            Instantiate(ObjectToPlace, spawnPoint, Quaternion.identity);
             AstarPath.active.Scan(); //Rescans the grid to adjust for new block
-            //This isn't needed when there is a "Build" and "Action" phase to the game, but for now.
         }
-        //right click will spawn a turret
-        else if (Input.GetMouseButtonDown(1))
+
+        if (Input.GetMouseButtonDown(1))
         {
-            Vector2 spawnPoint = GetClosestCentrePointToHit(hit.point);
-            if (ObjectAtPoint(spawnPoint)) //Check if wall already at point
-                return;
-            Instantiate(TurretPrefab, spawnPoint, Quaternion.identity);
-            AstarPath.active.Scan(); //Rescans the grid to adjust for new block
+            ObjectToPlace = null;
         }
     }
 
