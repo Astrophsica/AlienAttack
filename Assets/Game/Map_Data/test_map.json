@@ -1,0 +1,30 @@
+{
+	"map_name": "test_map",
+	"waves": [
+		{
+			"delay": "0",
+			"enemies": [{
+					"type": "basic",
+					"delay": "0"
+				},
+				{
+					"type": "basic",
+					"delay": "1"
+				}
+			]
+		},
+		{
+			"delay": "1",
+			"enemies": [{
+					"type": "basic",
+					"delay": "1"
+				},
+				{
+					"type": "basic",
+					"delay": "2"
+				}
+			]
+		}
+	]
+
+}
