@@ -24,6 +24,7 @@ public class TravelPath : MonoBehaviour
     {
         if (collision.gameObject.layer == _enemyLayer)
         {
+            WaveManager.AliveEnemyCount--;
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
