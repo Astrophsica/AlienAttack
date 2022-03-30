@@ -9,7 +9,7 @@
 				},
 				{
 					"type": "basic",
-					"delay": "1"
+					"delay": "0.5"
 				}
 			]
 		},
@@ -21,7 +21,7 @@
 				},
 				{
 					"type": "basic",
-					"delay": "2"
+					"delay": "1.5"
 				}
 			]
 		}

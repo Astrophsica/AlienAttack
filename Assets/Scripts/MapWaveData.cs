@@ -19,6 +19,7 @@ public class WaveData
 [System.Serializable]
 public class EnemyData
 {
+    public bool Spawned;
     public string type;
     public float delay;
 }

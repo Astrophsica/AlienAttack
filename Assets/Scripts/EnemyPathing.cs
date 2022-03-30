@@ -23,7 +23,14 @@ public class EnemyPathing : MonoBehaviour
         _seeker = GetComponent<Seeker>();
 
         //Generate path
+        if (_target is null) { return; }
         GenerateNewPath(_target);
+    }
+
+    public void SetTarget(Transform pTarget)
+    {
+        _target = pTarget;
+        //GenerateNewPath(_target);
     }
 
     void GenerateNewPath(Transform pTarget)
