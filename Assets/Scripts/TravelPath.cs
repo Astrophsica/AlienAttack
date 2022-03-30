@@ -11,11 +11,13 @@ public class TravelPath : MonoBehaviour
     private Vector2 _direction;
     private Rigidbody2D _rb;
     LayerMask _enemyLayer;
+    Transform _target;
 
-    public void Constructor(Vector2 pGoal)
+    public void Constructor(Transform pTarget)
     {
+        _target = pTarget;
         _rb = GetComponent<Rigidbody2D>();
-        _direction = (pGoal - (Vector2)transform.position).normalized;
+        _direction = ((Vector2)pTarget.transform.position - (Vector2)transform.position).normalized;
         _rb.velocity = _direction * BulletSpeed;
         _enemyLayer = LayerMask.NameToLayer("Enemy");
     }
@@ -24,9 +26,12 @@ public class TravelPath : MonoBehaviour
     {
         if (collision.gameObject.layer == _enemyLayer)
         {
-            WaveManager.AliveEnemyCount--;
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            if (collision.gameObject.transform == _target)
+            {
+                WaveManager.AliveEnemyCount--;
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -24,6 +24,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -631162612138560488, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: FireRate
+      value: 4.02
+      objectReference: {fileID: 0}
+    - target: {fileID: -631162612138560488, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: AreaOfView
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -631162612138560488, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: BulletPrefab
       value: 
       objectReference: {fileID: 8737459250305265568, guid: a8ea96bc85e0648458e9641adbe6384b, type: 3}
