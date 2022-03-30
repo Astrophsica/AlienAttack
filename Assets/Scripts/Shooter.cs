@@ -16,14 +16,16 @@ public class Shooter : MonoBehaviour
     [SerializeField]
     GameObject BulletPrefab;
 
+    Transform _transform;
     private float timeBetweenShots;
     private float counter;
     private LayerMask _enemyLayer;
 
     private void Start()
     {
-        timeBetweenShots = FireRate / 1.0f;
+        timeBetweenShots = 1.0f / FireRate;
         _enemyLayer = LayerMask.GetMask("Enemy");
+        _transform = GetComponent<Transform>();
     }
 
     void Update()
@@ -34,10 +36,15 @@ public class Shooter : MonoBehaviour
 
         Transform enemy = GetClosestEnemy();
         if (enemy == null) { return; }
-
-        var projectile = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
+        
+        var projectile = Instantiate(BulletPrefab, _transform.position, Quaternion.identity);
+        Vector3 diff = enemy.position - _transform.position;
+        diff.Normalize();
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        _transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        projectile.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
         var travelPathComponent = projectile.GetComponent<TravelPath>();
-        travelPathComponent.Constructor((Vector2)enemy.position);
+        travelPathComponent.Constructor(enemy);
     }
 
     private Transform GetClosestEnemy()

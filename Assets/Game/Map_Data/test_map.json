@@ -9,19 +9,227 @@
 				},
 				{
 					"type": "basic",
-					"delay": "0.5"
-				}
-			]
-		},
-		{
-			"delay": "1",
-			"enemies": [{
-					"type": "basic",
-					"delay": "1"
+					"delay": "0.05"
 				},
 				{
 					"type": "basic",
-					"delay": "1.5"
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
+				},
+				{
+					"type": "basic",
+					"delay": "0.05"
 				}
 			]
 		}
