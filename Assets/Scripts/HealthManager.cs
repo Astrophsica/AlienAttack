@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour
         
     }
 
-    void ReduceHealth(int amount)
+    public void ReduceHealth(int amount)
     {
         _health -= amount;
     }
