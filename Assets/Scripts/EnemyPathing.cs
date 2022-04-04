@@ -16,12 +16,13 @@ public class EnemyPathing : MonoBehaviour
     int _pathIndex = 0; 
     bool _reachedEndOfPath = false;
     Seeker _seeker; //Seeker component on AI
-
+    LayerMask _strongholdLayer;
+    
     void Start()
     {
         _transform = GetComponent<Transform>();
         _seeker = GetComponent<Seeker>();
-
+        _strongholdLayer = LayerMask.NameToLayer("Stronghold");
         //Generate path
         if (_target is null) { return; }
         GenerateNewPath(_target);
@@ -40,7 +41,7 @@ public class EnemyPathing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.gameObject.layer == _strongholdLayer)
         {
             var stronghold_transform = collision.GetComponent<Transform>();
             stronghold_transform.position = new Vector2(-8.5f, 3.5f);
