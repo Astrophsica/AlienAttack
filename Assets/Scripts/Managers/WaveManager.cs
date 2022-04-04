@@ -15,8 +15,7 @@ public class WaveManager : MonoBehaviour
     MapWaveData data;
 
     EnemyData[] currentEnemies;
-    public static int AliveEnemyCount = 0;
-
+    
     private int wavePointer = 0, enemyPointer;
     private float timeIntoWave = 0, waveDelay = 0, timeFromLastEnemy = 0;
     public int CurrentWave { get { return wavePointer;} }
@@ -38,7 +37,7 @@ public class WaveManager : MonoBehaviour
         timeFromLastEnemy += Time.deltaTime;
         if (timeIntoWave < waveDelay) { return; }
         if (waveEnded) { StartNewWave(); }
-        if (AliveEnemyCount == 0 && enemyPointer >= currentEnemies.Length)
+        if (EnemyManager.enemies.Count == 0 && enemyPointer >= currentEnemies.Length)
         {
             enemyPointer = 0;
             waveEnded = true;
@@ -49,14 +48,10 @@ public class WaveManager : MonoBehaviour
                 timeFromLastEnemy < currentEnemies[enemyPointer].delay ||
                 currentEnemies[enemyPointer].Spawned) { return; }
             Vector3 randomSpawnPoint = GetRandomSpawnPoint();
-            switch (currentEnemies[enemyPointer].type)
-            {
-                case "basic":
-                    var enemy = Instantiate(EnemyTypes[0], randomSpawnPoint, Quaternion.identity);
-                    enemy.GetComponent<Enemy>().SetTarget(StronholdTransform);
-                    AliveEnemyCount++;
-                    break;
-            }
+
+            var enemy = EnemyManager.SpawnNewEnemy(currentEnemies[enemyPointer].type, randomSpawnPoint);
+            enemy.GetComponent<Enemy>().SetTarget(StronholdTransform);
+
             currentEnemies[enemyPointer].Spawned = true;
             enemyPointer++;
             timeFromLastEnemy = 0;

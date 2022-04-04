@@ -5,15 +5,13 @@ using UnityEngine;
 
 public class HealthTextUI : MonoBehaviour
 {
-    [SerializeField]
-    HealthManager healthManager;
     TextMeshProUGUI text;
 
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-        text.text = "Health " + healthManager._health;
-        healthManager._healthChanged.AddListener(UpdateHealth);
+        text.text = "Health " + HealthManager.Health;
+        HealthManager.HealthChanged.AddListener(UpdateHealth);
     }
 
     void UpdateHealth(int health)
