@@ -24,7 +24,7 @@ public class Placer : MonoBehaviour
 
     void Start()
     {
-        _structureLayer = LayerMask.GetMask("Wall", "Turret");
+        _structureLayer = LayerMask.GetMask("Wall", "Turret", "Stronghold");
         _backgroundLayer = ~LayerMask.NameToLayer("Background");
     }
     void Update()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 320148862643532325}
   - component: {fileID: 320148862643532327}
   - component: {fileID: 320148862643532326}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Stronghold
   m_TagString: Player
   m_Icon: {fileID: 0}
