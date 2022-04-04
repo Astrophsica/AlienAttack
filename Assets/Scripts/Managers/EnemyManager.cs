@@ -11,7 +11,15 @@ public class EnemyManager : MonoBehaviour
 
     public GameObject SpawnNewEnemy(string type, Vector3 position)
     {
-        var enemy = Instantiate(EnemyTypes[0], position, Quaternion.identity);
+        GameObject enemyObjectToSpawn = null;
+        switch (type)
+        {
+            case "basic":
+                enemyObjectToSpawn = EnemyTypes[0];
+                break;
+        }
+        
+        var enemy = Instantiate(enemyObjectToSpawn, position, Quaternion.identity);
         enemies.Add(enemy);
         return enemy;
     }
