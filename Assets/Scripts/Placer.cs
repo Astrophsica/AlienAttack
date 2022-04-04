@@ -66,8 +66,9 @@ public class Placer : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            ObjectToPlace = null;
+            Destroy(_objectGhost.gameObject); //User cancels placement
             SetGhostNull();
+            ObjectToPlace = null;
         }
     }
 
