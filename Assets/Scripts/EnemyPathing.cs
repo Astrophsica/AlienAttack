@@ -4,7 +4,7 @@ using UnityEngine;
 using Pathfinding;
 using System;
 
-public class EnemyPathing : MonoBehaviour
+public class EnemyPathing
 {
     [SerializeField]
     Transform _target; //Target the AI will move to
@@ -16,15 +16,14 @@ public class EnemyPathing : MonoBehaviour
     int _pathIndex = 0; 
     bool _reachedEndOfPath = false;
     Seeker _seeker; //Seeker component on AI
-    LayerMask _strongholdLayer;
-    HealthManager _healthManager;
 
-    void Start()
+
+    public EnemyPathing(float speed, Transform transform , Seeker seeker)
     {
-        _transform = GetComponent<Transform>();
-        _seeker = GetComponent<Seeker>();
-        _strongholdLayer = LayerMask.NameToLayer("Stronghold");
-        _healthManager = GameObject.Find("HealthManager").gameObject.GetComponent<HealthManager>();
+        _speed = speed;
+        _transform = transform;
+        _seeker = seeker;
+
         //Generate path
         if (_target is null) { return; }
         GenerateNewPath(_target);
@@ -41,15 +40,7 @@ public class EnemyPathing : MonoBehaviour
         _seeker.StartPath(_transform.position, pTarget.position, OnPathComplete);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == _strongholdLayer)
-        {
-            _healthManager.ReduceHealth(1);
-        }
-    }
-
-    void FixedUpdate()
+    public void Update()
     {
         if (_path == null) return;
         _reachedEndOfPath = _pathIndex >= _path.vectorPath.Count;
@@ -67,7 +58,7 @@ public class EnemyPathing : MonoBehaviour
 
     void FollowPath(){
         //get direction from current to next point, then normalise
-        Vector3 direction = (_path.vectorPath[_pathIndex] - transform.position).normalized;
+        Vector3 direction = (_path.vectorPath[_pathIndex] - _transform.position).normalized;
         //add direction to position, multiplying by speed and deltaT
         _transform.position += direction * _speed * Time.deltaTime;
 
