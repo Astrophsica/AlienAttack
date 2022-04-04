@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf05cd482443144cb9eff8bea362f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AreaOfView: 4.49
-  FireRate: 0.26
+  AreaOfView: 1
+  FireRate: 0.1
   BulletPrefab: {fileID: 4623827345181372062, guid: ec6375e43cc1ff244b52bdc3a858bb9e, type: 3}
 --- !u!212 &-8745093243236824537
 SpriteRenderer:
