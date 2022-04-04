@@ -36,7 +36,10 @@ public class WaveManager : MonoBehaviour
         timeIntoWave += Time.deltaTime;
         timeFromLastEnemy += Time.deltaTime;
         if (timeIntoWave < waveDelay) { return; }
-        if (waveEnded) { StartNewWave(); }
+        if (waveEnded) { 
+            StartNewWave();
+            return;
+        }
         if (EnemyManager.enemies.Count == 0 && enemyPointer >= currentEnemies.Length)
         {
             enemyPointer = 0;
