@@ -28,8 +28,7 @@ public class TravelPath : MonoBehaviour
         {
             if (collision.gameObject.transform == _target)
             {
-                EnemyManager enemyManager = GameObject.Find("EnemyManager").gameObject.GetComponent<EnemyManager>();
-                enemyManager.DestroyEnemy(collision.gameObject);
+                EnemyManager.DestroyEnemy(collision.gameObject);
                 Destroy(gameObject);
             }
         }
