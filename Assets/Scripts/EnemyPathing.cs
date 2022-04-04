@@ -17,12 +17,14 @@ public class EnemyPathing : MonoBehaviour
     bool _reachedEndOfPath = false;
     Seeker _seeker; //Seeker component on AI
     LayerMask _strongholdLayer;
-    
+    HealthManager _healthManager;
+
     void Start()
     {
         _transform = GetComponent<Transform>();
         _seeker = GetComponent<Seeker>();
         _strongholdLayer = LayerMask.NameToLayer("Stronghold");
+        _healthManager = GameObject.Find("HealthManager").gameObject.GetComponent<HealthManager>();
         //Generate path
         if (_target is null) { return; }
         GenerateNewPath(_target);
@@ -43,8 +45,7 @@ public class EnemyPathing : MonoBehaviour
     {
         if (collision.gameObject.layer == _strongholdLayer)
         {
-            var stronghold_script = collision.GetComponent<HealthManager>();
-            stronghold_script.ReduceHealth(1);
+            _healthManager.ReduceHealth(1);
         }
     }
 
