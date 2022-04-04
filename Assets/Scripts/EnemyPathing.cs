@@ -43,8 +43,8 @@ public class EnemyPathing : MonoBehaviour
     {
         if (collision.gameObject.layer == _strongholdLayer)
         {
-            var stronghold_transform = collision.GetComponent<Transform>();
-            stronghold_transform.position = new Vector2(-8.5f, 3.5f);
+            var stronghold_script = collision.GetComponent<HealthManager>();
+            stronghold_script.ReduceHealth(1);
         }
     }
 
