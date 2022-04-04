@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class EnemyManager : MonoBehaviour
     GameObject[] EnemyTypes;
 
     static public List<GameObject> enemies = new List<GameObject>();
+    static public Dictionary<string, GameObject> enemyAssets = new Dictionary<string, GameObject>();
 
     static public GameObject SpawnNewEnemy(string type, Vector3 position)
     {
@@ -33,12 +35,19 @@ public class EnemyManager : MonoBehaviour
 
     static private GameObject LoadPrefabFromFile(string filename)
     {
+        GameObject loadedObject;
+        if (enemyAssets.TryGetValue(filename, out loadedObject))
+        {
+            return loadedObject;
+        }
+
         Debug.Log("Trying to load Prefab from file (" + filename + ")...");
-        var loadedObject = Resources.Load("Game/Enemy/" + filename);
+        loadedObject = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Game/Enemy/" + filename + ".prefab", typeof(GameObject));
         if (loadedObject == null)
         {
             throw new FileNotFoundException("...no file found - please check the configuration");
         }
-        return (GameObject)loadedObject;
+        enemyAssets.Add(filename, loadedObject);
+        return loadedObject;
     }
 }
