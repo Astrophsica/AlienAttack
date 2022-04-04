@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    GameObject[] EnemyTypes;
 
-    // Update is called once per frame
-    void Update()
+    public List<GameObject> enemies = new List<GameObject>();
+
+    public GameObject SpawnNewEnemy(string type, Vector3 position)
     {
-        
+        var enemy = Instantiate(EnemyTypes[0], position, Quaternion.identity);
+        enemies.Add(enemy);
+        return enemy;
     }
 }
