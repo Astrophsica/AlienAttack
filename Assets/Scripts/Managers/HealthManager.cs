@@ -6,28 +6,28 @@ using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
-    public int _health = 100;
-    public IntEvent _healthChanged;
-    public UnityEvent _healthIsZero;
+    static public int Health = 100;
+    static public IntEvent HealthChanged;
+    static public UnityEvent HealthIsZero;
 
     // Runs before start() on all game objects
     void Awake()
     {
-        _healthChanged = new IntEvent();
-        _healthIsZero = new UnityEvent();
+        HealthChanged = new IntEvent();
+        HealthIsZero = new UnityEvent();
     }
 
-    public void ReduceHealth(int amount)
+    static public void ReduceHealth(int amount)
     {
         if (amount > 0)
         {
-            _health -= amount;
-            _healthChanged.Invoke(_health);
+            Health -= amount;
+            HealthChanged.Invoke(Health);
         }
         if (amount == 0)
         {
             // Game over
-            _healthIsZero.Invoke();
+            HealthIsZero.Invoke();
         }
     }
 }
