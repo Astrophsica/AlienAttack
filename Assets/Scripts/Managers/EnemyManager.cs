@@ -7,7 +7,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]
     GameObject[] EnemyTypes;
 
-    public static List<GameObject> enemies = new List<GameObject>();
+    public List<GameObject> enemies = new List<GameObject>();
 
     public GameObject SpawnNewEnemy(string type, Vector3 position)
     {
@@ -16,7 +16,7 @@ public class EnemyManager : MonoBehaviour
         return enemy;
     }
 
-    static public void DestroyEnemy(GameObject enemy)
+    public void DestroyEnemy(GameObject enemy)
     {
         enemies.Remove(enemy);
         Destroy(enemy);
