@@ -53,7 +53,7 @@ public class WaveManager : MonoBehaviour
             {
                 case "basic":
                     var enemy = Instantiate(EnemyTypes[0], randomSpawnPoint, Quaternion.identity);
-                    enemy.GetComponent<EnemyPathing>().SetTarget(StronholdTransform);
+                    enemy.GetComponent<Enemy>().SetTarget(StronholdTransform);
                     AliveEnemyCount++;
                     break;
             }

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2938420240216027697}
   - component: {fileID: 659395034550596454}
   - component: {fileID: 4228194201666189580}
-  - component: {fileID: 3953481738517531925}
   - component: {fileID: 389720358363392273}
   - component: {fileID: 8176858562924589286}
+  - component: {fileID: -2858951681306606162}
   m_Layer: 8
   m_Name: Test_Enemy
   m_TagString: Untagged
@@ -114,21 +114,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &3953481738517531925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7184935734815288123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a0acd5e42028e4c825bee0f869e1d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _speed: 3
-  _nextWaypointDistance: 0.1
 --- !u!58 &389720358363392273
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -166,3 +151,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-2858951681306606162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184935734815288123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7265b5fbbd28fb4389feb145ad3fc9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 2
+  Health: 1
