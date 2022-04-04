@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
-    int _health = 100;
+    public int _health = 100;
     public UnityEvent _HealthIsZero;
 
     // Start is called before the first frame update
