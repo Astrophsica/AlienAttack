@@ -15,8 +15,6 @@ public class WaveManager : MonoBehaviour
     MapWaveData data;
 
     EnemyData[] currentEnemies;
-
-    private EnemyManager enemyManager;
     
     private int wavePointer = 0, enemyPointer;
     private float timeIntoWave = 0, waveDelay = 0, timeFromLastEnemy = 0;
@@ -25,7 +23,6 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
-        enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
         data = JsonUtility.FromJson<MapWaveData>(map_json.text);
     }
 
@@ -40,7 +37,7 @@ public class WaveManager : MonoBehaviour
         timeFromLastEnemy += Time.deltaTime;
         if (timeIntoWave < waveDelay) { return; }
         if (waveEnded) { StartNewWave(); }
-        if (enemyManager.enemies.Count == 0 && enemyPointer >= currentEnemies.Length)
+        if (EnemyManager.enemies.Count == 0 && enemyPointer >= currentEnemies.Length)
         {
             enemyPointer = 0;
             waveEnded = true;
@@ -52,7 +49,7 @@ public class WaveManager : MonoBehaviour
                 currentEnemies[enemyPointer].Spawned) { return; }
             Vector3 randomSpawnPoint = GetRandomSpawnPoint();
 
-            var enemy = enemyManager.SpawnNewEnemy(currentEnemies[enemyPointer].type, randomSpawnPoint);
+            var enemy = EnemyManager.SpawnNewEnemy(currentEnemies[enemyPointer].type, randomSpawnPoint);
             enemy.GetComponent<Enemy>().SetTarget(StronholdTransform);
 
             currentEnemies[enemyPointer].Spawned = true;
