@@ -41,7 +41,6 @@ public class EnemyManager : MonoBehaviour
             return loadedObject;
         }
 
-        Debug.Log("Trying to load Prefab from file (" + filename + ")...");
         loadedObject = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Game/Enemy/" + filename + ".prefab", typeof(GameObject));
         if (loadedObject == null)
         {
