@@ -6,7 +6,6 @@ using System;
 
 public class EnemyPathing
 {
-    [SerializeField]
     Transform _target; //Target the AI will move to
 
     Transform _transform;

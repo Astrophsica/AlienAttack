@@ -5,17 +5,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float _speed;
-    public int _health;
+    [SerializeField]
+    private float Speed;
+    [SerializeField]
+    private int Health;
+
     EnemyPathing _enemyPathing;
     LayerMask _strongholdLayer;
     HealthManager _healthManager;
 
     void Awake()
     {
-        _speed = 2f;
-        _health = 1;
-        _enemyPathing = new EnemyPathing(_speed, GetComponent<Transform>(), GetComponent<Seeker>());
+        _enemyPathing = new EnemyPathing(Speed, GetComponent<Transform>(), GetComponent<Seeker>());
         _strongholdLayer = LayerMask.NameToLayer("Stronghold");
         _healthManager = GameObject.Find("HealthManager").gameObject.GetComponent<HealthManager>();
     }
@@ -33,7 +34,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.layer == _strongholdLayer)
         {
-            _healthManager.ReduceHealth(1);
+            // Damage based on health of enemy
+            _healthManager.ReduceHealth(Health);
         }
     }
 
