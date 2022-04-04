@@ -35,6 +35,12 @@ public class Placer : MonoBehaviour
         if (hit.collider == null) 
         {
             //Need to make sure mouse is over the game, not the UI
+            //Still deciding on this, but for now, delete object to place when go outside of screen
+            if (_objectGhost != null)
+            {
+                Destroy(_objectGhost.gameObject);
+                SetGhostNull();
+            }
             return; 
         }
         if (_objectGhost == null)
@@ -91,7 +97,7 @@ public class Placer : MonoBehaviour
     {
         if (Physics2D.Raycast(point, Vector2.zero, 5.0f, _structureLayer).collider != null)
         {
-            Debug.LogWarning("Structure already at position: " + point);
+            //Debug.LogWarning("Structure already at position: " + point);
             return true;
         }
         return false;
