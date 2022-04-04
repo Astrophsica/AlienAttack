@@ -18,7 +18,7 @@ public class EnemyPathing
     Seeker _seeker; //Seeker component on AI
 
 
-    public EnemyPathing(float speed, Transform transform , Seeker seeker)
+    public EnemyPathing(float speed, Transform transform, Seeker seeker)
     {
         _speed = speed;
         _transform = transform;
@@ -32,7 +32,7 @@ public class EnemyPathing
     public void SetTarget(Transform pTarget)
     {
         _target = pTarget;
-        //GenerateNewPath(_target);
+        GenerateNewPath(_target);
     }
 
     void GenerateNewPath(Transform pTarget)
