@@ -6,7 +6,19 @@ using UnityEngine;
 public class Placer : MonoBehaviour
 {
     //This static variable is changed by the UI scripts
-    public static GameObject ObjectToPlace = null;
+    private GameObject _objectToPlace = null;
+    public GameObject ObjectToPlace { 
+        get { return _objectToPlace; }
+        set 
+        { 
+            _objectToPlace = value;
+            SetGhostNull();
+        }
+    }
+    private int _objectLayer = 0;
+    private GameObject _objectGhost = null;
+    private SpriteRenderer _objectGhostSprite = null;
+    private Color _invalidPlaceColor = new Color(1, 0, 0, 0.65f);
     LayerMask _backgroundLayer;
     LayerMask _structureLayer;
 
@@ -15,7 +27,6 @@ public class Placer : MonoBehaviour
         _structureLayer = LayerMask.GetMask("Wall", "Turret");
         _backgroundLayer = ~LayerMask.NameToLayer("Background");
     }
-
     void Update()
     {
         if (ObjectToPlace == null) { return; }
@@ -26,20 +37,53 @@ public class Placer : MonoBehaviour
             //Need to make sure mouse is over the game, not the UI
             return; 
         }
-
-        if (Input.GetMouseButtonDown(0)){
+        if (_objectGhost == null)
+        {
             Vector2 spawnPoint = GetClosestCentrePointToHit(hit.point);
+            _objectGhost = Instantiate(ObjectToPlace, spawnPoint, Quaternion.identity);
+            TurnObjectToGhost();
+        }
+        else {
+            Vector2 tempSpawn = GetClosestCentrePointToHit(hit.point);
+            Vector3 newPosition = new Vector3(tempSpawn.x, tempSpawn.y,1.0f);
+            _objectGhost.transform.position = newPosition;     
+        }
 
-            if (ObjectAtPoint(spawnPoint)) //Check if wall already at point
-                return;
-            Instantiate(ObjectToPlace, spawnPoint, Quaternion.identity);
+        bool canPlace = !ObjectAtPoint(_objectGhost.transform.position);
+
+        if (!canPlace)
+            _objectGhostSprite.color = _invalidPlaceColor;
+        else
+            _objectGhostSprite.color = Color.white;
+
+        if (canPlace && Input.GetMouseButtonDown(0))
+        {
+            //ObjectGhost.transform.position -= Vector3.forward;
+            TurnGhostToObject();
+            SetGhostNull();
             AstarPath.active.Scan(); //Rescans the grid to adjust for new block
         }
 
         if (Input.GetMouseButtonDown(1))
         {
             ObjectToPlace = null;
+            SetGhostNull();
         }
+    }
+
+    private void TurnGhostToObject()
+    {
+        _objectGhost.GetComponent<BoxCollider2D>().isTrigger = false;
+        _objectGhost.layer = _objectLayer;
+        _objectLayer = 0;
+    }
+
+    private void TurnObjectToGhost()
+    {
+        _objectGhost.GetComponent<BoxCollider2D>().isTrigger = true;
+        _objectLayer = _objectGhost.layer;
+        _objectGhost.layer = 0;
+        _objectGhostSprite = _objectGhost.GetComponent<SpriteRenderer>();
     }
 
     private bool ObjectAtPoint(Vector2 point)
@@ -63,5 +107,11 @@ public class Placer : MonoBehaviour
         centrePoint.x = (point.x - xRounded < 0) ? (float)xRounded-0.5f : (float)xRounded + 0.5f;
         centrePoint.y = (point.y - yRounded < 0) ? (float)yRounded-0.5f : (float)yRounded + 0.5f;
         return centrePoint;
+    }
+
+    void SetGhostNull()
+    {
+        _objectGhost = null;
+        _objectGhostSprite = null;
     }
 }

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minigun_Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 1130559900943849579, guid: 7a644272290eebf4d9824bfa6bb49d15, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4165933945231196128, guid: 7a644272290eebf4d9824bfa6bb49d15, type: 3}
       propertyPath: m_RootOrder
       value: 0
