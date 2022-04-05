@@ -21,7 +21,7 @@ public class HealthManager : MonoBehaviour
     {
         if (amount > 0)
         {
-            Health -= amount;
+            Health = Mathf.Max(0, Health-amount); //Stops health going negative 
             HealthChanged.Invoke(Health);
         }
         if (amount == 0)
