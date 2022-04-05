@@ -81,6 +81,7 @@ public class Placer : MonoBehaviour
     private void TurnGhostToObject()
     {
         _objectGhost.GetComponent<BoxCollider2D>().isTrigger = false;
+        _objectGhost.GetComponentInChildren<RangeVisualiser>().enabled = false;
         _objectGhost.layer = _objectLayer;
         _objectLayer = 0;
     }
@@ -88,6 +89,7 @@ public class Placer : MonoBehaviour
     private void TurnObjectToGhost()
     {
         _objectGhost.GetComponent<BoxCollider2D>().isTrigger = true;
+        _objectGhost.GetComponentInChildren<RangeVisualiser>().enabled = true;
         _objectLayer = _objectGhost.layer;
         _objectGhost.layer = 0;
         _objectGhostSprite = _objectGhost.GetComponent<SpriteRenderer>();
