@@ -7,7 +7,7 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField]
     [Range(1, 20)]
-    private float AreaOfView;
+    public float AreaOfView;
 
     [SerializeField]
     [Range(0.1f, 10.0f)]

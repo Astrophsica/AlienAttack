@@ -43,6 +43,22 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 12.42
       objectReference: {fileID: 0}
+    - target: {fileID: 1025055271270919871, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025055271270919871, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025055271270919871, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025055271270919871, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 2128376797661576609, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: m_Name
       value: Minigun_Turret 1
@@ -77,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2360644183160210475, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2360644183160210475, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -106,6 +122,10 @@ PrefabInstance:
     - target: {fileID: 2360644183160210475, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607720115977216233, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_Color.a
+      value: 0.3254902
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
