@@ -297,7 +297,7 @@ Transform:
   m_Children:
   - {fileID: 1418604359}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -542,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8040195198667756588, guid: c01e6504f42c36041bcf200be10939e4, type: 3}
       propertyPath: data.dataString
-      value: UEsDBBQAAAgIAAAAIeznczTtYAIAABYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z4jAM/SuMz9tOArQMe9ulQPfQlinb6SUXEyvEg2NnbKdAO/z3lZyEpNkTQu9JevpwvpjUroTUG7u2UjwZAezniJHNfow68BFOfG/0Vn5Cy3mXwudE4oHzyr006I8pzJkCvJXpL71XRI7QWWmZGVssxR4WxnmH7owrBwhZ4ylao+trxE74czOnkDNa4xlZn2jNo9EFzRS0B9ujRrfzhtsya2KlU8WLEgSp7vjxrGHHNU1jPw2DtKdGKekaMcyfy9DstszBAnUrJMfeggCi5yD3uSed/diXLHPgG0WWnx+kxRHVSdlvU8+t4O5Qy/rgqqIyd7P7IKlO+vQffhMHOLOmeGzrxhHV8LlMD6/8nHLne4Ptux++C6/0kasD3yl4z0E/m7U1lRYIeltRaOVg/ND9vba2yCE9dP5aauts61ZlN+9osBxq4hLaPy2ULHYE3U5rx1aZMO+wfbC4mT+oONyGa1Kgl2S8OfjL9/0jaoCVtM4j1LSpSd/OVJaobIUGjT6t/MJYDcHbdFKC5sqfN5jFD1c4wHpVB8iK02tpajdY+wgGIcHd8aNoAG3M8bosl5vjE7j8pfJK6n4yQp5xTgujdX1iboBS3LayGU/7cftKiu/HxSbj6G46nd7vJhGPxhNxM5lMd+Mohmw6vxPzeMbC9UmNnXK1qaU2A8K16W6UGi+t/YyM1paX4d6F5ce1/CxMb+hSZ2abWgD9Ume4KgeLRfBZiqWQOKIteC91WDj7Spgy6QFEck2UhFaXJ2950mVJWCk/jCdPwhbhu5Ewcl+veWPhQ8KRirfJLuzyD1BLAwQUAAAICAAAACHsWAHv2W0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0krGRgamJiYlZkrFBooGRcYqusbFJkpGBYWqaiaVpiqWhuVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAACHs53M07WACAAAWBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAACHsWAHv2W0AAAB4AAAACQAkAAAAAAAAAAAAAACtAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAGUDAAAAAA==
+      value: UEsDBBQAAAgIAAAAIewbMyISawIAAB0FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zmzAQ/SsenesMYJLUvbVO4vSQxBO3kwsXGS1GYyExkojtZPzfuyvAENcXL2/f7r79gE8mtash98YurRRPRgD7MWFks2+TwfkIB741ei0/oOe8SeFLIvHAeeVeGsRjCnOmAm9l/lNvFZEjBBstC2Ore7GFhXHeIVxw5QBd1niK1gh9TtgB/6ZzCjmildyS9YHWPJqc0MxBe7AjanyVzCL8XXcRPb+lNzpXvKpBkPYhKr7t2HFL09hVx6AOcqOUdJ0k5o91aHldl2CBehaSY4dBRnQ1/45ICXJbehI8Dn8pCge+E2X58U5anFWbl/0y7QAr7natsneuGqqU3CRpkNVmffqPMI2Du7CmeuwLxxEV8aXMd6/8mHPnRyMew3eD+DhMaM/Vjm8UvJWgn83SmkYLdHrbUGjjILkbHs+9LUrIdwPeSu3Bvm5TDzOPLhZETZxC/4eFktUmDDNtgbUyYebhDsDidn6j4nAlrkuBKMn46+AP347PqXM8SOs8uro2NenbmMYSlT2gQbPPG78wVkNAu05q0Fz54wqz+MsdXvhGVS88D5zem6525+tfh4uQAA/8KLpwrcz+vCxXmv0TuPKl8UpqGEST4xnHtDBatyfmvjopat3YguejqG0jxdfLYrMkuk7T9GYzi3iUzMR0Nks3SRRDkc6vxTy+ZeH0pMY2uVq1Orvp4M70kFzjmfVfk8nS8jpcu7B8v5QflRnpk7ow69wC6Jc2Qz8hBxaL4Hsp7oXE+azBe6nDttlnxpTJdyCyc6IsdHp/8JZnQ5aM1fLdeEIytgifj4wRfD7llYV3CXsq3ic7sdM/UEsDBBQAAAgIAAAAIexYAe/ZbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSsZGBqYmJiVmSsUGigZFxiq6xsUmSkYFhapqJpWmKpaG5UixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAAIewbMyISawIAAB0FAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAAIexYAe/ZbQAAAHgAAAAJACQAAAAAAAAAAAAAALgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAcAMAAAAA
       objectReference: {fileID: 0}
     - target: {fileID: 8040195198667756589, guid: c01e6504f42c36041bcf200be10939e4, type: 3}
       propertyPath: m_RootOrder
@@ -1346,6 +1346,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629301209}
   m_CullTransparentMesh: 1
+--- !u!1 &1663667332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 320148862643532330, guid: 3c2ec85b4b1127248b40a3ec4708cff7, type: 3}
+  m_PrefabInstance: {fileID: 1418300415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1663667336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663667332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2108d22a5bc6354f9d29864a47fa3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1793037659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,7 +1733,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1492111922868959409, guid: 67f180e64ebd78344944b42cae014e4d, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1492111922868959409, guid: 67f180e64ebd78344944b42cae014e4d, type: 3}
       propertyPath: m_LocalPosition.x
