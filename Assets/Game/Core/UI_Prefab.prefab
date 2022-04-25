@@ -1037,7 +1037,6 @@ GameObject:
   - component: {fileID: 6909821829778243927}
   - component: {fileID: 6909821829778243924}
   - component: {fileID: 6909821829778243925}
-  - component: {fileID: 6909821829778243922}
   - component: {fileID: 8406835542230748583}
   m_Layer: 5
   m_Name: Railgun
@@ -1148,19 +1147,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6909821829778243922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6909821829778243920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7850f63012bf57e4bb32ed167bf7eb5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PrefabToDisplay: {fileID: 4891581166196960196, guid: ab0fc61a3beb1df438d789942bfaaecb, type: 3}
 --- !u!114 &8406835542230748583
 MonoBehaviour:
   m_ObjectHideFlags: 0
