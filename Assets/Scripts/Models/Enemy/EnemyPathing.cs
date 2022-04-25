@@ -4,6 +4,7 @@ using UnityEngine;
 using Pathfinding;
 using System;
 
+// Author: Keiron Beadle
 public class EnemyPathing
 {
     Transform _target; //Target the AI will move to
