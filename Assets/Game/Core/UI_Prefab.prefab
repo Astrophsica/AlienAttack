@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 2165726792503016526}
   - component: {fileID: 2165726792503016521}
   m_Layer: 0
-  m_Name: ClickHandler
+  m_Name: PlayerLink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 2165726792749014451}
   - component: {fileID: 2165726792749014450}
   - component: {fileID: 2165726792749014413}
-  - component: {fileID: 2165726792749014448}
+  - component: {fileID: 4997038069198041801}
   m_Layer: 5
   m_Name: Minigun
   m_TagString: Untagged
@@ -391,20 +391,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2165726792749014450}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2165726792503016521}
-        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2165726792749014413}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2165726792749014448
+      m_Calls: []
+--- !u!114 &4997038069198041801
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -413,10 +401,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2165726792749014415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7850f63012bf57e4bb32ed167bf7eb5a, type: 3}
+  m_Script: {fileID: 11500000, guid: a1cf141030653034c826c4da20357e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabToDisplay: {fileID: 6328075293318043902, guid: a18f5f73636f62649b63c65fce215548, type: 3}
+  Price: 0
+  Prefab: {fileID: 6328075293318043902, guid: a18f5f73636f62649b63c65fce215548, type: 3}
+  PlayerLink: {fileID: 2165726792503016521}
 --- !u!1 &2165726793070097005
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +419,7 @@ GameObject:
   - component: {fileID: 2165726793070096913}
   - component: {fileID: 2165726793070096912}
   - component: {fileID: 2165726793070096915}
-  - component: {fileID: 2165726793070096918}
+  - component: {fileID: 2578559596014868662}
   m_Layer: 5
   m_Name: Laser
   m_TagString: Untagged
@@ -538,20 +528,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2165726793070096912}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2165726792503016521}
-        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2165726793070096915}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2165726793070096918
+      m_Calls: []
+--- !u!114 &2578559596014868662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -560,10 +538,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2165726793070097005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7850f63012bf57e4bb32ed167bf7eb5a, type: 3}
+  m_Script: {fileID: 11500000, guid: a1cf141030653034c826c4da20357e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabToDisplay: {fileID: 2161717054986147231, guid: 60715c9e9c42c5c4ba9de4bf8aa6288b, type: 3}
+  Price: 0
+  Prefab: {fileID: 2161717054986147231, guid: 60715c9e9c42c5c4ba9de4bf8aa6288b, type: 3}
+  PlayerLink: {fileID: 2165726792503016521}
 --- !u!1 &2165726793258167312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1038,7 @@ GameObject:
   - component: {fileID: 6909821829778243924}
   - component: {fileID: 6909821829778243925}
   - component: {fileID: 6909821829778243922}
+  - component: {fileID: 8406835542230748583}
   m_Layer: 5
   m_Name: Railgun
   m_TagString: Untagged
@@ -1166,19 +1147,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6909821829778243924}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2165726792503016521}
-        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6909821829778243925}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &6909821829778243922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,6 +1161,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabToDisplay: {fileID: 4891581166196960196, guid: ab0fc61a3beb1df438d789942bfaaecb, type: 3}
+--- !u!114 &8406835542230748583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6909821829778243920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cf141030653034c826c4da20357e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Price: 0
+  Prefab: {fileID: 4891581166196960196, guid: ab0fc61a3beb1df438d789942bfaaecb, type: 3}
+  PlayerLink: {fileID: 2165726792503016521}
 --- !u!1 &6909821830197145522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1346,7 @@ GameObject:
   - component: {fileID: 6909821830839350108}
   - component: {fileID: 6909821830839350109}
   - component: {fileID: 6909821830839350106}
-  - component: {fileID: 6909821830839350107}
+  - component: {fileID: 2686521404583256162}
   m_Layer: 5
   m_Name: Wall
   m_TagString: Untagged
@@ -1471,20 +1455,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6909821830839350109}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2165726792503016521}
-        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6909821830839350106}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &6909821830839350107
+      m_Calls: []
+--- !u!114 &2686521404583256162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1493,7 +1465,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6909821830839350105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7850f63012bf57e4bb32ed167bf7eb5a, type: 3}
+  m_Script: {fileID: 11500000, guid: a1cf141030653034c826c4da20357e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabToDisplay: {fileID: 4022015196982720276, guid: 5bb064904e29e364fa81c867e5050742, type: 3}
+  Price: 0
+  Prefab: {fileID: 4022015196982720276, guid: 5bb064904e29e364fa81c867e5050742, type: 3}
+  PlayerLink: {fileID: 2165726792503016521}
