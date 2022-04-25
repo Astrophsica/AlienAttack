@@ -19,21 +19,20 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
+        // Create new enemy pathing and pass relevant properties needed for pathing
         _enemyPathing = new EnemyPathing(Speed, GetComponent<Transform>(), GetComponent<Seeker>());
         _strongholdLayer = LayerMask.NameToLayer("Stronghold");
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
     }
 
     public void SetTarget(Transform pTarget)
     {
+        // Set enemy destination/target
         _enemyPathing.SetTarget(pTarget);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // If collision with stronghold/base occurs, then damage base based on enemy health
         if (collision.gameObject.layer == _strongholdLayer)
         {
             // Damage based on health of enemy
@@ -43,12 +42,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Update enemy pathing on fixed timing
         _enemyPathing.Update();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
