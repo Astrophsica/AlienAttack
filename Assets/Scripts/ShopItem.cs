@@ -12,7 +12,7 @@ public class ShopItem : MonoBehaviour
     public GameObject Prefab;
 
     [SerializeField]
-    public PlayerLink PlayerLink;
+    public GameObject PlayerLink;
 
     public void Start()
     {
@@ -21,6 +21,6 @@ public class ShopItem : MonoBehaviour
 
     public void OnClick()
     {
-        PlayerLink.placer.ObjectToPlace = Prefab;
+        PlayerLink.GetComponent<PlayerLink>().Player.GetComponent<Placer>().ObjectToPlace = Prefab;
     }
 }

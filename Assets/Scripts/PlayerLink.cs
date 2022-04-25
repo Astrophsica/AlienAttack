@@ -6,6 +6,6 @@ using UnityEngine.UI;
 public class PlayerLink : MonoBehaviour
 {
     [SerializeField]
-    public Placer placer;
+    public GameObject Player;
 
 }
