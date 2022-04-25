@@ -4,9 +4,8 @@ using UnityEngine;
 using Pathfinding;
 using System;
 
-public class EnemyPathing : MonoBehaviour
+public class EnemyPathing
 {
-    [SerializeField]
     Transform _target; //Target the AI will move to
 
     Transform _transform;
@@ -17,12 +16,21 @@ public class EnemyPathing : MonoBehaviour
     bool _reachedEndOfPath = false;
     Seeker _seeker; //Seeker component on AI
 
-    void Start()
+
+    public EnemyPathing(float speed, Transform transform, Seeker seeker)
     {
-        _transform = GetComponent<Transform>();
-        _seeker = GetComponent<Seeker>();
+        _speed = speed;
+        _transform = transform;
+        _seeker = seeker;
 
         //Generate path
+        if (_target is null) { return; }
+        GenerateNewPath(_target);
+    }
+
+    public void SetTarget(Transform pTarget)
+    {
+        _target = pTarget;
         GenerateNewPath(_target);
     }
 
@@ -31,16 +39,7 @@ public class EnemyPathing : MonoBehaviour
         _seeker.StartPath(_transform.position, pTarget.position, OnPathComplete);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            var stronghold_transform = collision.GetComponent<Transform>();
-            stronghold_transform.position = new Vector2(-8.5f, 3.5f);
-        }
-    }
-
-    void FixedUpdate()
+    public void Update()
     {
         if (_path == null) return;
         _reachedEndOfPath = _pathIndex >= _path.vectorPath.Count;
@@ -58,7 +57,7 @@ public class EnemyPathing : MonoBehaviour
 
     void FollowPath(){
         //get direction from current to next point, then normalise
-        Vector3 direction = (_path.vectorPath[_pathIndex] - transform.position).normalized;
+        Vector3 direction = (_path.vectorPath[_pathIndex] - _transform.position).normalized;
         //add direction to position, multiplying by speed and deltaT
         _transform.position += direction * _speed * Time.deltaTime;
 

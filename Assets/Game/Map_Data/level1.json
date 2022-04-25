@@ -1,0 +1,102 @@
+{
+	"map_name": "level1_map",
+	"waves": [
+		{
+			"delay": "0",
+			"enemies": [{
+					"type": "basic",
+					"delay": "0"
+				},
+                {
+					"type": "basic",
+					"delay": "0.5"
+                },
+                {
+                    "type": "basic",
+					"delay": "1.5"       
+                },
+                {
+                    "type": "basic",
+					"delay": "0.5"       
+                },
+                {
+                    "type": "basic",
+					"delay": "1.5"      
+                },
+                {
+                    "type": "basic",
+					"delay": "0.5"      
+                },
+                {
+                    "type": "basic",
+					"delay": "1.5"      
+                },
+                {
+                    "type": "basic",
+					"delay": "0.5"    
+                },
+                {
+                    "type": "basic",
+					"delay": "1.5"      
+                },
+                {
+                    "type": "basic",
+					"delay": "0.5"      
+                },
+                {
+                    "type": "basic",
+					"delay": "1.5"       
+                }
+			]
+		},
+        {
+			"delay": "5",
+			"enemies": [{
+					"type": "basic",
+					"delay": "0"
+				}
+			]
+        },
+        {
+            "delay": "5",
+			"enemies": [{
+					"type": "basic",
+					"delay": "0"
+				}
+			]    
+        },
+        {
+            "delay": "5",
+			"enemies": [{
+					"type": "basic",
+					"delay": "0"
+				}
+			]   
+        },
+        {
+            "delay": "5",
+			"enemies": [{
+					"type": "basic",
+					"delay": "0"
+				}
+			]  
+        },
+        {
+            "delay": "5",
+			"enemies": [{
+					"type": "basic",
+					"delay": "0"
+				}
+			] 
+        },
+        {
+            "delay": "5",
+			"enemies": [{
+					"type": "basic",
+					"delay": "0"
+				}
+			]
+        }
+	]
+
+}

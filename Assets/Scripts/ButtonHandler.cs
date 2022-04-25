@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour
 {
+    [SerializeField]
+    Placer placer;
+
     public void OnClick(Button btn)
     {
         var prefab = btn.GetComponent<PrefabDisplay>().GetPrefab();
-        Placer.ObjectToPlace = prefab;
+        placer.ObjectToPlace = prefab;
     }
 }
