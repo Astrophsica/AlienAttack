@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cf141030653034c826c4da20357e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Price: 0
+  Price: 50
   Prefab: {fileID: 6328075293318043902, guid: a18f5f73636f62649b63c65fce215548, type: 3}
   PlayerLink: {fileID: 2165726792503016521}
 --- !u!1 &2165726793070097005
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cf141030653034c826c4da20357e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Price: 0
+  Price: 20
   Prefab: {fileID: 2161717054986147231, guid: 60715c9e9c42c5c4ba9de4bf8aa6288b, type: 3}
   PlayerLink: {fileID: 2165726792503016521}
 --- !u!1 &2165726793258167312
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cf141030653034c826c4da20357e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Price: 0
+  Price: 100
   Prefab: {fileID: 4891581166196960196, guid: ab0fc61a3beb1df438d789942bfaaecb, type: 3}
   PlayerLink: {fileID: 2165726792503016521}
 --- !u!1 &6909821830197145522
@@ -1454,6 +1454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cf141030653034c826c4da20357e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Price: 0
+  Price: 10
   Prefab: {fileID: 4022015196982720276, guid: 5bb064904e29e364fa81c867e5050742, type: 3}
   PlayerLink: {fileID: 2165726792503016521}
