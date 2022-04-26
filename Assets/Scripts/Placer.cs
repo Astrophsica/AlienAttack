@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author: Keiron Beadle (Main) and Humza Khan (Improvements and Money system)
 public class Placer : MonoBehaviour
 {
     //This static variable is changed by the UI scripts
@@ -58,6 +59,7 @@ public class Placer : MonoBehaviour
         }
 
         bool canPlace = !ObjectAtPoint(_objectGhost.transform.position);
+        // Set canPlace to false is player does not have enough money for item
         if (ShopManager.Money - SelectedShopItem.Price < 0)
         {
             canPlace = false;
