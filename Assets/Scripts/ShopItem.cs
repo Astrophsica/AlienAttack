@@ -7,15 +7,12 @@ using UnityEngine.UI;
 public class ShopItem : MonoBehaviour
 {
     [Tooltip("Price of item")]
-    [SerializeField]
     public int Price;
 
     [Tooltip("Game object prefab for this item")]
-    [SerializeField]
     public GameObject Prefab;
 
     [Tooltip("The player link object with property to Player object")]
-    [SerializeField]
     public GameObject PlayerLink;
 
     public void Start()
@@ -26,7 +23,8 @@ public class ShopItem : MonoBehaviour
 
     public void OnClick()
     {
-        // Sets ObjectToPlace for placer script
+        // Sets SelectedShopItem and ObjectToPlace for placer script
+        PlayerLink.GetComponent<PlayerLink>().Player.GetComponent<Placer>().SelectedShopItem = this;
         PlayerLink.GetComponent<PlayerLink>().Player.GetComponent<Placer>().ObjectToPlace = Prefab;
     }
 }

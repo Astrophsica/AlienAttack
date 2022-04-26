@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author: Keiron Beadle (Main) and Humza Khan (Improvements and Money system)
 public class Placer : MonoBehaviour
 {
     //This static variable is changed by the UI scripts
     private GameObject _objectToPlace = null;
+    public ShopItem SelectedShopItem = null;
     public GameObject ObjectToPlace { 
         get { return _objectToPlace; }
         set 
@@ -29,6 +31,7 @@ public class Placer : MonoBehaviour
     }
     void Update()
     {
+        if (SelectedShopItem == null) { return; }
         if (ObjectToPlace == null) { return; }
 
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 5.0f, _backgroundLayer);
@@ -56,6 +59,11 @@ public class Placer : MonoBehaviour
         }
 
         bool canPlace = !ObjectAtPoint(_objectGhost.transform.position);
+        // Set canPlace to false is player does not have enough money for item
+        if (ShopManager.Money - SelectedShopItem.Price < 0)
+        {
+            canPlace = false;
+        }
 
         if (!canPlace)
             _objectGhostSprite.color = _invalidPlaceColor;
@@ -67,6 +75,7 @@ public class Placer : MonoBehaviour
             //ObjectGhost.transform.position -= Vector3.forward;
             TurnGhostToObject();
             SetGhostNull();
+            ShopManager.SpendMoney(SelectedShopItem.Price);
             AstarPath.active.Scan(); //Rescans the grid to adjust for new block
         }
 
@@ -75,6 +84,7 @@ public class Placer : MonoBehaviour
             Destroy(_objectGhost.gameObject); //User cancels placement
             SetGhostNull();
             ObjectToPlace = null;
+            SelectedShopItem = null;
         }
     }
 

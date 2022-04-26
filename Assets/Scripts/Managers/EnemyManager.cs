@@ -8,7 +8,6 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     [Tooltip("List of unique enemies")]
-    [SerializeField]
     GameObject[] EnemyTypes;
 
     static public List<GameObject> enemies = new List<GameObject>();

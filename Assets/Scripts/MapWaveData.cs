@@ -13,6 +13,7 @@ public class MapWaveData
 public class WaveData
 {
     public float delay;
+    public int reward;
     public EnemyData[] enemies;
 }
 
