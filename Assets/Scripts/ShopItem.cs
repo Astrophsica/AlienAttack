@@ -7,15 +7,12 @@ using UnityEngine.UI;
 public class ShopItem : MonoBehaviour
 {
     [Tooltip("Price of item")]
-    [SerializeField]
     public int Price;
 
     [Tooltip("Game object prefab for this item")]
-    [SerializeField]
     public GameObject Prefab;
 
     [Tooltip("The player link object with property to Player object")]
-    [SerializeField]
     public GameObject PlayerLink;
 
     public void Start()

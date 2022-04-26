@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class PlayerLink : MonoBehaviour
 {
     [Tooltip("Reference to Player object")]
-    [SerializeField]
     public GameObject Player;
 
 }
