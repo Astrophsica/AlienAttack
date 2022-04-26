@@ -26,7 +26,8 @@ public class ShopItem : MonoBehaviour
 
     public void OnClick()
     {
-        // Sets ObjectToPlace for placer script
+        // Sets SelectedShopItem and ObjectToPlace for placer script
+        PlayerLink.GetComponent<PlayerLink>().Player.GetComponent<Placer>().SelectedShopItem = this;
         PlayerLink.GetComponent<PlayerLink>().Player.GetComponent<Placer>().ObjectToPlace = Prefab;
     }
 }
