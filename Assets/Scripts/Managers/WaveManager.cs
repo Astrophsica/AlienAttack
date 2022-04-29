@@ -16,7 +16,7 @@ public class WaveManager : MonoBehaviour
 
     EnemyData[] currentEnemies;
     
-    private int wavePointer = 0, enemyPointer;
+    private int wavePointer = 0, enemyPointer, reward;
     private float timeIntoWave = 0, waveDelay = 0, timeFromLastEnemy = 0;
     public int CurrentWave { get { return wavePointer;} }
     private bool waveEnded = true;
@@ -44,6 +44,7 @@ public class WaveManager : MonoBehaviour
         {
             enemyPointer = 0;
             waveEnded = true;
+            ShopManager.AddMoney(reward);
         }
         if (!waveEnded)
         {
@@ -72,6 +73,7 @@ public class WaveManager : MonoBehaviour
         var newWave = data.waves[wavePointer++];
         currentEnemies = newWave.enemies;
         waveDelay = newWave.delay;
+        reward = newWave.reward;
         timeIntoWave = 0;
         timeFromLastEnemy = 0;
     }

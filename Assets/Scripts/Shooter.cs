@@ -21,6 +21,7 @@ public class Shooter : MonoBehaviour
     private float counter;
     private LayerMask _enemyLayer;
 
+
     private void Start()
     {
         timeBetweenShots = 1.0f / FireRate;

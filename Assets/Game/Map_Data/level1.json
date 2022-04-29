@@ -3,6 +3,7 @@
 	"waves": [
 		{
 			"delay": "0",
+			"reward": "20",
 			"enemies": [{
 					"type": "basic",
 					"delay": "0"
@@ -51,6 +52,7 @@
 		},
         {
 			"delay": "5",
+			"reward": "40",
 			"enemies": [{
 					"type": "basic",
 					"delay": "0"
@@ -58,7 +60,8 @@
 			]
         },
         {
-            "delay": "5",
+            		"delay": "5",
+			"reward": "60",
 			"enemies": [{
 					"type": "basic",
 					"delay": "0"
@@ -66,7 +69,8 @@
 			]    
         },
         {
-            "delay": "5",
+            		"delay": "5",
+			"reward": "80",
 			"enemies": [{
 					"type": "basic",
 					"delay": "0"
@@ -74,7 +78,8 @@
 			]   
         },
         {
-            "delay": "5",
+            		"delay": "5",
+			"reward": "100",
 			"enemies": [{
 					"type": "basic",
 					"delay": "0"
@@ -82,7 +87,8 @@
 			]  
         },
         {
-            "delay": "5",
+            		"delay": "5",
+			"reward": "100",
 			"enemies": [{
 					"type": "basic",
 					"delay": "0"
@@ -90,7 +96,8 @@
 			] 
         },
         {
-            "delay": "5",
+            		"delay": "5",
+			"reward": "100",
 			"enemies": [{
 					"type": "basic",
 					"delay": "0"

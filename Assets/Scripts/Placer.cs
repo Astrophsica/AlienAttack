@@ -4,10 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author: Keiron Beadle (Main) and Humza Khan (Improvements and Money system)
 public class Placer : MonoBehaviour
 {
     //This static variable is changed by the UI scripts
     private GameObject _objectToPlace = null;
+    public ShopItem SelectedShopItem = null;
     public GameObject ObjectToPlace { 
         get { return _objectToPlace; }
         set 
@@ -30,6 +32,7 @@ public class Placer : MonoBehaviour
     }
     void Update()
     {
+        if (SelectedShopItem == null) { return; }
         if (ObjectToPlace == null) { return; }
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 5.0f, _backgroundLayer);
         if (hit.collider == null) 
@@ -55,12 +58,9 @@ public class Placer : MonoBehaviour
             _objectGhost.transform.position = newPosition;     
         }
 
-        bool canPlace = !ObjectAtPoint(_objectGhost.transform.position);
-
-        if (!canPlace)
-            _objectGhostSprite.color = _invalidPlaceColor;
-        else
-            _objectGhostSprite.color = Color.white;
+        bool hasMoney = ShopManager.Money - SelectedShopItem.Price < 0;
+        bool canPlace = hasMoney && !ObjectAtPoint(_objectGhost.transform.position);
+        _objectGhostSprite.color = canPlace ? Color.white : _invalidPlaceColor;
 
         if (canPlace && Input.GetMouseButtonDown(0))
         {
@@ -71,10 +71,13 @@ public class Placer : MonoBehaviour
             if (AStarManager.Instance.IsCutoff())
             {
                 TurnObjectToGhost();
+                _objectGhostSprite.color = _invalidPlaceColor;
                 //AstarPath.active.UpdateGraphs(new Bounds(_objectGhost.transform.position, new Vector3(1.0f, 1.0f, 1.0f)));
                 return;
             }
             SetGhostNull();
+            ShopManager.SpendMoney(SelectedShopItem.Price);
+            AstarPath.active.Scan(); //Rescans the grid to adjust for new block
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -82,6 +85,7 @@ public class Placer : MonoBehaviour
             Destroy(_objectGhost.gameObject); //User cancels placement
             SetGhostNull();
             ObjectToPlace = null;
+            SelectedShopItem = null;
         }
     }
 
