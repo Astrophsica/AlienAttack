@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -631162612138560488, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: AreaOfView
+      value: 4.01
+      objectReference: {fileID: 0}
     - target: {fileID: -434299175814851814, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 6.64
@@ -65,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2360644183160210475, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2360644183160210475, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: m_LocalRotation.w

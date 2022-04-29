@@ -13,6 +13,7 @@ public class RangeVisualiser : MonoBehaviour
         var scaleOfParent = transform.parent.localScale.x; //Need to undo scale of parent for the child
         range = (1.0f / scaleOfParent) * range;
         transform.localScale = new Vector3(range, range, 0.1f);
+        GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
     }
 
     private void OnEnable()

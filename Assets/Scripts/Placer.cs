@@ -58,17 +58,9 @@ public class Placer : MonoBehaviour
             _objectGhost.transform.position = newPosition;     
         }
 
-        bool canPlace = !ObjectAtPoint(_objectGhost.transform.position);
-        // Set canPlace to false is player does not have enough money for item
-        if (ShopManager.Money - SelectedShopItem.Price < 0)
-        {
-            canPlace = false;
-        }
-
-        if (!canPlace)
-            _objectGhostSprite.color = _invalidPlaceColor;
-        else
-            _objectGhostSprite.color = Color.white;
+        bool hasMoney = ShopManager.Money - SelectedShopItem.Price < 0;
+        bool canPlace = hasMoney && !ObjectAtPoint(_objectGhost.transform.position);
+        _objectGhostSprite.color = canPlace ? Color.white : _invalidPlaceColor;
 
         if (canPlace && Input.GetMouseButtonDown(0))
         {
