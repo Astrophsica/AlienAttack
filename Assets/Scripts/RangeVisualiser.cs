@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Author Keiron
+/// Shows an AoE of turrets before placing them down
+/// Effectively showing their attack range
+/// </summary>
 public class RangeVisualiser : MonoBehaviour
 {
     float range;

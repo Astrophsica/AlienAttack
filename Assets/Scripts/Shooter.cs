@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Author Keiron
+/// Allows turrets to shoot bullets / projectiles
+/// </summary>
 public class Shooter : MonoBehaviour
 {
     [SerializeField]

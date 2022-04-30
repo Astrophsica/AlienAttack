@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Author Keiron
+/// </summary>
 public class WaveManager : MonoBehaviour
 {
     [SerializeField]
