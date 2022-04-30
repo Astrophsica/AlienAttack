@@ -7,7 +7,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     GameObject[] EnemyTypes;
     [SerializeField]
-    GameObject[] SpawnPoints;
+    public GameObject[] SpawnPoints;
     [SerializeField]
     Transform StronholdTransform;
     [SerializeField]
