@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author Keiron
 public class AStarManager : MonoBehaviour
 {
     private static AStarManager _instance;
@@ -19,7 +20,9 @@ public class AStarManager : MonoBehaviour
     }
 
     private GameObject[] enemySpawnPoints;
-    private Vector3 strongholdPosition;
+
+    //Vec3 intialised as 0,0,0, we won't be making any maps in the range [-999,-999] so it's a fine bound to use
+    private Vector3 strongholdPosition = new Vector3(-999,-999); 
 
     public bool IsCutoff()
     {
@@ -28,7 +31,7 @@ public class AStarManager : MonoBehaviour
             var waveManager = FindObjectOfType<WaveManager>();
             enemySpawnPoints = waveManager.SpawnPoints;
         }
-        if (strongholdPosition == null)
+        if (strongholdPosition.x == -999 && strongholdPosition.y == -999)
         {
             strongholdPosition = FindObjectOfType<StrongholdData>().Position;
         }
