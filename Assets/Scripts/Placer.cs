@@ -58,9 +58,7 @@ public class Placer : MonoBehaviour
             _objectGhost.transform.position = newPosition;     
         }
 
-        // <<<<<<<<     Disabled for testing purposes       >>>>>>>>>>>
-        //bool hasMoney = ShopManager.Money - SelectedShopItem.Price < 0;
-        bool hasMoney = true;
+        bool hasMoney = ShopManager.Money - SelectedShopItem.Price >= 0;
         bool canPlace = hasMoney && !ObjectAtPoint(_objectGhost.transform.position);
         _objectGhostSprite.color = canPlace ? Color.white : _invalidPlaceColor;
 
