@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Author Keiron
+/// Moves bullets fired by turrets
+/// </summary>
 public class TravelPath : MonoBehaviour
 {
     [SerializeField]

@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
+//Author Keiron - Used for JSON loading of waves/maps
 [System.Serializable]
 public class MapWaveData
 {
