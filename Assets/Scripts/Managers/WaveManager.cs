@@ -4,6 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// Author Keiron
+/// Humza added Shop code
 /// </summary>
 public class WaveManager : MonoBehaviour
 {
@@ -29,8 +30,14 @@ public class WaveManager : MonoBehaviour
         data = JsonUtility.FromJson<MapWaveData>(map_json.text);
     }
 
+    public void StartWave()
+    {
+        StartNewWave();
+    }
+
     void Update()
     {
+        if (GameManager.Instance.InBuildMode()) { return; }
         if (wavePointer > data.waves.Length) 
         {
             Debug.Log("End of waves");
@@ -39,8 +46,8 @@ public class WaveManager : MonoBehaviour
         timeIntoWave += Time.deltaTime;
         timeFromLastEnemy += Time.deltaTime;
         if (timeIntoWave < waveDelay) { return; }
-        if (waveEnded) { 
-            StartNewWave();
+        if (waveEnded) {
+            GameManager.Instance.SwitchState();
             return;
         }
         if (EnemyManager.enemies.Count == 0 && enemyPointer >= currentEnemies.Length)
