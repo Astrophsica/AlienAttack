@@ -48,14 +48,17 @@ public class GameManager : MonoBehaviour
     private void SetupPlayMode()
     {
         WaveManager.StartWave();
-        Player.GetComponent<Placer>().enabled = false;
+        var placer = Player.GetComponent<Placer>();
+        placer.enabled = false;
+        placer.DeleteHeldObject();
         NextWaveButton.GetComponent<RectTransform>().position -= new Vector3(0,100,0);
         NextWaveButton.enabled = false;
     }
 
     private void SetupBuildMode()
     {
-        Player.GetComponent<Placer>().enabled = true;
+        var placer = Player.GetComponent<Placer>();
+        placer.enabled = true;
         NextWaveButton.GetComponent<RectTransform>().position += new Vector3(0, 100, 0);
         NextWaveButton.enabled = true;
     }
