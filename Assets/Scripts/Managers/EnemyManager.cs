@@ -47,7 +47,7 @@ public class EnemyManager : MonoBehaviour
         }
 
         // Get object from file, add to asset list and return object
-        loadedObject = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Game/Enemy/" + filename + ".prefab", typeof(GameObject));
+        loadedObject = (GameObject)Resources.Load("Game/Enemy/Test_Enemy"); //Keiron Fix
         if (loadedObject == null)
         {
             throw new FileNotFoundException("...no file found - please check the configuration");
