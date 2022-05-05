@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 // Author: Keiron Beadle (Main) and Humza Khan (Improvements and Money system)
 public class Placer : MonoBehaviour
@@ -59,7 +60,8 @@ public class Placer : MonoBehaviour
         }
 
         bool hasMoney = ShopManager.Money - SelectedShopItem.Price >= 0;
-        bool canPlace = hasMoney && !ObjectAtPoint(_objectGhost.transform.position);
+        bool overUI = IsMouseOverUI();
+        bool canPlace = hasMoney && !overUI && !ObjectAtPoint(_objectGhost.transform.position);
         _objectGhostSprite.color = canPlace ? Color.white : _invalidPlaceColor;
 
         if (canPlace && Input.GetMouseButtonDown(0))
@@ -78,11 +80,13 @@ public class Placer : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            Destroy(_objectGhost.gameObject); //User cancels placement
-            SetGhostNull();
-            ObjectToPlace = null;
-            SelectedShopItem = null;
+            DeleteHeldObject();
         }
+    }
+
+    private bool IsMouseOverUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
     }
 
     private void TurnGhostToObject()
@@ -138,6 +142,15 @@ public class Placer : MonoBehaviour
     {
         var nearestNode = AstarPath.active.GetNearest(point);
         return ConvertNodePositionToHalfPoint(nearestNode.position);
+    }
+
+    public void DeleteHeldObject()
+    {
+        if (_objectGhost == null) { return; }
+        Destroy(_objectGhost.gameObject); //User cancels placement
+        SetGhostNull();
+        ObjectToPlace = null;
+        SelectedShopItem = null;
     }
 
     void SetGhostNull()

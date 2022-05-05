@@ -61,7 +61,10 @@ public class EnemyPathing
         Vector3 direction = (_path.vectorPath[_pathIndex] - _transform.position).normalized;
         //add direction to position, multiplying by speed and deltaT
         _transform.position += direction * _speed * Time.deltaTime;
-
+        Vector3 diff = direction;
+        diff.Normalize();
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        _transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 90);
         float distanceToNextPoint = Vector2.Distance(_transform.position, _path.vectorPath[_pathIndex]);
         if (distanceToNextPoint < _nextWaypointDistance){
             _pathIndex++;

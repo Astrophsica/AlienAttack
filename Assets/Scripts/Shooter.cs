@@ -20,6 +20,7 @@ public class Shooter : MonoBehaviour
     [SerializeField]
     GameObject BulletPrefab;
 
+    AudioSource _audioSource;
     Transform _transform;
     private float timeBetweenShots;
     private float counter;
@@ -31,6 +32,7 @@ public class Shooter : MonoBehaviour
         timeBetweenShots = 1.0f / FireRate;
         _enemyLayer = LayerMask.GetMask("Enemy");
         _transform = GetComponent<Transform>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -43,6 +45,7 @@ public class Shooter : MonoBehaviour
         if (enemy == null) { return; }
         
         var projectile = Instantiate(BulletPrefab, _transform.position, Quaternion.identity);
+        PlayAudioClip();
         Vector3 diff = enemy.position - _transform.position;
         diff.Normalize();
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
@@ -50,6 +53,11 @@ public class Shooter : MonoBehaviour
         projectile.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
         var travelPathComponent = projectile.GetComponent<TravelPath>();
         travelPathComponent.Constructor(enemy);
+    }
+
+    private void PlayAudioClip()
+    {
+        _audioSource.PlayOneShot(_audioSource.clip);
     }
 
     private Transform GetClosestEnemy()

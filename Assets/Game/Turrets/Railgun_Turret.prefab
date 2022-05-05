@@ -23,10 +23,26 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5712304755374305119, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_Volume
+      value: 0.305
+      objectReference: {fileID: 0}
+    - target: {fileID: -5712304755374305119, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b7c0d000e915d9a47be04d6451772b67, type: 3}
+    - target: {fileID: -631162612138560488, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: FireRate
+      value: 0.56
+      objectReference: {fileID: 0}
     - target: {fileID: -631162612138560488, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: AreaOfView
-      value: 2.55
+      value: 3.04
       objectReference: {fileID: 0}
+    - target: {fileID: -631162612138560488, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 8737459250305265568, guid: a8ea96bc85e0648458e9641adbe6384b, type: 3}
     - target: {fileID: -434299175814851814, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 3.8

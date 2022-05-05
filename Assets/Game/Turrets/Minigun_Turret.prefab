@@ -23,6 +23,14 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5712304755374305119, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_Volume
+      value: 0.502
+      objectReference: {fileID: 0}
+    - target: {fileID: -5712304755374305119, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c8eae2a54a6401449975eb104b3d097e, type: 3}
     - target: {fileID: -631162612138560488, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: FireRate
       value: 4.02
@@ -61,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2128376797661576609, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: m_Name
-      value: Minigun_Turret 1
+      value: Minigun_Turret
       objectReference: {fileID: 0}
     - target: {fileID: 2128376797661576609, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: m_Layer
