@@ -71,6 +71,7 @@ public class Placer : MonoBehaviour
             {
                 TurnObjectToGhost();
                 _objectGhostSprite.color = _invalidPlaceColor;
+                AstarPath.active.Scan(); //Rescans the grid to adjust for new block
                 return;
             }
             SetGhostNull();
