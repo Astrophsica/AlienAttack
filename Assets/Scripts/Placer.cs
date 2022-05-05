@@ -146,6 +146,7 @@ public class Placer : MonoBehaviour
 
     public void DeleteHeldObject()
     {
+        if (_objectGhost == null) { return; }
         Destroy(_objectGhost.gameObject); //User cancels placement
         SetGhostNull();
         ObjectToPlace = null;

@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.layer == _strongholdLayer)
         {
             // Damage based on health of enemy
-            HealthManager.ReduceHealth(Health);
+            HealthManager.ReduceHealth(Health); 
         }
     }
 

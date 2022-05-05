@@ -23,6 +23,14 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5712304755374305119, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_Volume
+      value: 0.192
+      objectReference: {fileID: 0}
+    - target: {fileID: -5712304755374305119, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c898d4d5228db04aaae3c37007ea4d1, type: 3}
     - target: {fileID: -631162612138560488, guid: b2390a7b112f65b448ae68db17f6586c, type: 3}
       propertyPath: FireRate
       value: 0.96

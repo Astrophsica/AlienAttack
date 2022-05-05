@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     WaveManager WaveManager;
     [SerializeField]
+    GameObject AudioManager;
+    [SerializeField]
     Button NextWaveButton; 
     bool _buildMode = false;
 
@@ -53,6 +55,9 @@ public class GameManager : MonoBehaviour
         placer.DeleteHeldObject();
         NextWaveButton.GetComponent<RectTransform>().position -= new Vector3(0,100,0);
         NextWaveButton.enabled = false;
+        var audioSources = AudioManager.GetComponents<AudioSource>();
+        audioSources[0].Stop();
+        audioSources[1].Play();
     }
 
     private void SetupBuildMode()
@@ -61,5 +66,8 @@ public class GameManager : MonoBehaviour
         placer.enabled = true;
         NextWaveButton.GetComponent<RectTransform>().position += new Vector3(0, 100, 0);
         NextWaveButton.enabled = true;
+        var audioSources = AudioManager.GetComponents<AudioSource>();
+        audioSources[1].Stop();
+        audioSources[0].Play();
     }
 }
