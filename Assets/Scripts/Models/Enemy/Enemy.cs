@@ -36,7 +36,9 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.layer == _strongholdLayer)
         {
             // Damage based on health of enemy
-            HealthManager.ReduceHealth(Health); 
+            HealthManager.ReduceHealth(Health);
+            // Destroy itself since it has damaged stronghold/base
+            EnemyManager.DestroyEnemy(gameObject);
         }
     }
 
