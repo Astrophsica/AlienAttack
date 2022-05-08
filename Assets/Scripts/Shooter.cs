@@ -15,7 +15,7 @@ public class Shooter : MonoBehaviour
 
     [SerializeField]
     [Range(0.1f, 10.0f)]
-    private float FireRate;
+    private float FireRate; //Measured in how many shots per second, i.e. 1 Firerate = 1 shot per second.
 
     [SerializeField]
     GameObject BulletPrefab;
@@ -38,6 +38,7 @@ public class Shooter : MonoBehaviour
     void Update()
     {
         counter += Time.deltaTime;
+        //This 'if' effectively limits the fire rate of turrets.
         if (counter < timeBetweenShots) { return; }
         counter = 0;
 
@@ -52,6 +53,7 @@ public class Shooter : MonoBehaviour
         _transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
         projectile.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
         var travelPathComponent = projectile.GetComponent<TravelPath>();
+        //Runs a late constructor on the projectile's path component, passing it's goal destination i.e. enemy
         travelPathComponent.Constructor(enemy);
     }
 
@@ -60,6 +62,10 @@ public class Shooter : MonoBehaviour
         _audioSource.PlayOneShot(_audioSource.clip);
     }
 
+    /// <summary>
+    /// Runs a circle collision scan on the field, then returns the closest enemy to the turret.
+    /// </summary>
+    /// <returns></returns>
     private Transform GetClosestEnemy()
     {
         var hits = Physics2D.CircleCastAll(transform.position, AreaOfView, Vector2.zero, 0, _enemyLayer);

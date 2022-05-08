@@ -14,8 +14,8 @@ public class RangeVisualiser : MonoBehaviour
     void Start()
     {
         //Area of view is Radius, * 2 turns to diameter
-        range = GetComponentInParent<Shooter>().AreaOfView * 2;
-        var scaleOfParent = transform.parent.localScale.x; //Need to undo scale of parent for the child
+        range = GetComponentInParent<Shooter>().AreaOfView * 2; //Range is area of the turrets field of view
+        var scaleOfParent = transform.parent.localScale.x; //Need to undo scale of parent for the child, otherwise invalid size is drawn
         range = (1.0f / scaleOfParent) * range;
         transform.localScale = new Vector3(range, range, 0.1f);
         GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.2f);

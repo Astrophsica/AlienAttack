@@ -47,9 +47,10 @@ public class WaveManager : MonoBehaviour
         timeFromLastEnemy += Time.deltaTime;
         if (timeIntoWave < waveDelay) { return; }
         if (waveEnded) {
-            GameManager.Instance.SwitchState();
+            GameManager.Instance.SwitchState(); //Alternates between Build/Play mode
             return;
         }
+        //Checks if all enemies dead and ensures that the wave is finished spawning.
         if (EnemyManager.enemies.Count == 0 && enemyPointer >= currentEnemies.Length)
         {
             enemyPointer = 0;
@@ -58,11 +59,14 @@ public class WaveManager : MonoBehaviour
         }
         if (!waveEnded)
         {
+            //If the wave has finished spawning, don't do anything else.
             if (enemyPointer >= currentEnemies.Length ||
                 timeFromLastEnemy < currentEnemies[enemyPointer].delay ||
                 currentEnemies[enemyPointer].Spawned) { return; }
+            
+            //Picks a random spawn point from List of spawn points made in Unity
             Vector3 randomSpawnPoint = GetRandomSpawnPoint();
-
+            //Spawns a new enemy at said spawn point
             var enemy = EnemyManager.SpawnNewEnemy(currentEnemies[enemyPointer].type, randomSpawnPoint);
             enemy.GetComponent<Enemy>().SetTarget(StronholdTransform);
 
@@ -74,9 +78,13 @@ public class WaveManager : MonoBehaviour
 
     private Vector3 GetRandomSpawnPoint()
     {
+        //Chooses a random indexed spawn point game object in the Serializable Array
         return SpawnPoints[Mathf.FloorToInt(Random.value * SpawnPoints.Length)].transform.position;
     }
 
+    /// <summary>
+    /// Resets variables for a new wave to spawn.
+    /// </summary>
     void StartNewWave()
     {
         waveEnded = false;

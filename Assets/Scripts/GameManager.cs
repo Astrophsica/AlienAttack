@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     Button NextWaveButton; 
     bool _buildMode = false;
 
+    /// <summary>
+    /// Simple singleton design, in awake check for instance of GameManager,
+    /// if there is one, destroy the current object.
+    /// </summary>
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -47,6 +51,9 @@ public class GameManager : MonoBehaviour
             SetupPlayMode();
     }
 
+    /// <summary>
+    /// Sets up other scripts for play mode.
+    /// </summary>
     private void SetupPlayMode()
     {
         WaveManager.StartWave();
@@ -60,6 +67,9 @@ public class GameManager : MonoBehaviour
         audioSources[1].Play();
     }
 
+    /// <summary>
+    /// Sets up other scripts for build mode
+    /// </summary>
     private void SetupBuildMode()
     {
         var placer = Player.GetComponent<Placer>();

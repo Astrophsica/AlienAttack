@@ -49,6 +49,8 @@ public class EnemyPathing
         }
         else
         {
+            // If we don't have a path, check if the target is more than 0.2 away, if so, find a new path.
+            //No need to get a new path if we're next to the goal.
             if (Vector2.Distance(_target.position, _transform.position) > 0.2f)
             {
                 GenerateNewPath(_target);
@@ -63,6 +65,7 @@ public class EnemyPathing
         _transform.position += direction * _speed * Time.deltaTime;
         Vector3 diff = direction;
         diff.Normalize();
+        //rotate body to face the direction it's moving
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         _transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 90);
         float distanceToNextPoint = Vector2.Distance(_transform.position, _path.vectorPath[_pathIndex]);

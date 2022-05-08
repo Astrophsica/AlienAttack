@@ -24,6 +24,11 @@ public class AStarManager : MonoBehaviour
     //Vec3 intialised as 0,0,0, we won't be making any maps in the range [-999,-999] so it's a fine bound to use
     private Vector3 strongholdPosition = new Vector3(-999,-999); 
 
+    /// <summary>
+    /// Runs a check on all enemy spawn points to ensure they can all reach the stronghold
+    /// If one is found to be unable to reach this destination, true is returned.
+    /// </summary>
+    /// <returns></returns>
     public bool IsCutoff()
     {
         if (enemySpawnPoints == null)

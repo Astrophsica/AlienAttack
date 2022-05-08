@@ -32,6 +32,8 @@ public class TravelPath : MonoBehaviour
         {
             if (collision.gameObject.transform == _target)
             {
+                //Destroys both enemy & projectile on collision
+                //Eventually can be changed for different projectiles/turrets
                 EnemyManager.DestroyEnemy(collision.gameObject);
                 Destroy(gameObject);
             }
