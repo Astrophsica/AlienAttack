@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         var placer = Player.GetComponent<Placer>();
         placer.enabled = false;
         placer.DeleteHeldObject();
-        NextWaveButton.GetComponent<RectTransform>().position -= new Vector3(0,100,0);
+        NextWaveButton.GetComponent<RectTransform>().position -= new Vector3(0,250,0);
         NextWaveButton.enabled = false;
         var audioSources = AudioManager.GetComponents<AudioSource>();
         audioSources[0].Stop();
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         var placer = Player.GetComponent<Placer>();
         placer.enabled = true;
-        NextWaveButton.GetComponent<RectTransform>().position += new Vector3(0, 100, 0);
+        NextWaveButton.GetComponent<RectTransform>().position += new Vector3(0, 250, 0);
         NextWaveButton.enabled = true;
         var audioSources = AudioManager.GetComponents<AudioSource>();
         audioSources[1].Stop();
